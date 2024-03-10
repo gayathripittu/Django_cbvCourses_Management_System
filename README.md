@@ -30,7 +30,22 @@ Follow these steps to set up and install the cbvCourses Management System:
 
 3. **Configure the database:**
 
-    Update the database settings in the `settings.py` file to match your PostgreSQL configuration.
+    Edit the `settings.py` file to update your database settings under the `DATABASES` configuration.
+
+    Example for PostgreSQL:
+
+    ```python
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'yourdatabasename',
+            'USER': 'postgres',
+            'PASSWORD': 'yourpassword',
+            'HOST': 'localhost',
+            'PORT': 'yourportnumber',
+        }
+    }
+    ```
 
 4. **Apply migrations:**
 
@@ -41,7 +56,7 @@ Follow these steps to set up and install the cbvCourses Management System:
 
 5. **Creating a Superuser:**
 
-    Create a superuser account to access the Django admin panel:
+    To access the Django admin panel and perform administrative tasks, you need to create a superuser account. Run the following command:
 
     ```bash
     python manage.py createsuperuser
@@ -49,7 +64,7 @@ Follow these steps to set up and install the cbvCourses Management System:
 
 6. **Running the Server:**
 
-    Start the development server:
+    To start the development server and run the application locally, navigate to the project directory and execute the following command:
 
     ```bash
     python manage.py runserver
@@ -57,7 +72,7 @@ Follow these steps to set up and install the cbvCourses Management System:
 
 7. **Accessing the Application:**
 
-    Open your web browser and navigate to [http://localhost:8000/](http://localhost:8000/) to access the cbvCourses Management System.
+     After launching the server, navigate to [http://localhost:8000/](http://localhost:8000/) in your preferred web browser. From there, you'll be able to create, read, update, and delete passenger details using the provided class-based views.
 
 ## Testing with Postman
 
